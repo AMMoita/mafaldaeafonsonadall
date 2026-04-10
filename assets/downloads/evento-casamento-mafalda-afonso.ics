@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mafalda e Afonso//Casamento//PT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:casamento-mafalda-afonso-20260919@mafaldaeafonso.pt
+DTSTAMP:20260410T120000Z
+DTSTART;TZID=Europe/Lisbon:20260919T160000
+SUMMARY:Casamento Mafalda e Afonso
+LOCATION:Convento de Nossa Senhora da Sacaparte, Alfaiates
+DESCRIPTION:Missa às 16h. Copo de água às 17h. Local: Convento de Nossa Senhora da Sacaparte, Alfaiates. Confirmações até 30 de junho de 2026.
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

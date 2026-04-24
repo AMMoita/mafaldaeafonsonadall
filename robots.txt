@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ammoita.github.io/mafaldaeafonso/sitemap.xml

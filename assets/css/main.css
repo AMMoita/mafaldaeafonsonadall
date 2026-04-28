@@ -1954,7 +1954,7 @@ textarea:focus-visible{
 }
 
 .teste-hero{
-  min-height:100vh;
+  min-height:100dvh;
   padding-top:0;
   padding-bottom:0;
   align-items:stretch;
@@ -2080,4 +2080,30 @@ textarea:focus-visible{
     width:100%;
     min-height:42px;
   }
+}
+
+@media (max-width: 760px) and (max-height: 740px){
+
+  .teste-hero .hero-content{
+    padding-top: clamp(60px, 8vh, 90px);
+    padding-bottom: clamp(40px, 8vh, 80px);
+  }
+
+  .teste-hero .hero-bg{
+    background-size: min(650px, 120vw);
+    background-position: center 85%;
+  }
+
+}
+
+@media (max-height: 650px){
+
+  .teste-hero .hero-bg{
+    opacity: 0.85;
+  }
+
+  .teste-hero .hero-content h1{
+    font-size: clamp(28px, 6vw, 40px);
+  }
+
 }

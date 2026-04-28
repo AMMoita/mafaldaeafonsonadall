@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const progressBar = document.querySelector('.scroll-progress');
   const heroBg = document.querySelector('.hero-bg');
   const scrollHint = document.querySelector('.scroll-hint');
+  const heroActions = document.querySelector('.teste-hero-actions');
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -25,6 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (header) {
       header.classList.toggle('is-scrolled', y > 24);
     }
+
+    if (heroActions) {
+  heroActions.classList.toggle('is-visible', y > 80 && y < window.innerHeight * 0.85);
+}
 
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = docHeight > 0 ? (y / docHeight) * 100 : 0;

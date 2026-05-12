@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Single Page — Mafalda e Afonso</title>
+  <title>Mafalda e Afonso — 19.09.2026</title>
   <meta name="description" content="Mafalda e Afonso — 19 de setembro de 2026. Informação simples sobre o casamento, confirmação, local, presentes e deslocações.">
   <link rel="stylesheet" href="../assets/css/main.css">
   <script src="../assets/js/favicon.js"></script>
@@ -54,8 +54,7 @@
           <div class="intro-copy reveal-right">
             <h2 class="serif">Bem-vindos!</h2>
             <p>
-              Criámos esta página para terem toda a informação importante num só lugar.
-              Basta descer a página para verem o dia, o local, os presentes e a confirmação.
+              Querida família e amigos, o grande dia está a chegar, e gostaríamos muito de contar com a vossa presença para partilhar connosco este momento tão especial. Basta descer a página para verem informações sobre o dia, o local, os presentes e a confirmação.
             </p>
           </div>
         </div>
@@ -120,7 +119,27 @@
           <div class="editorial-copy deslocacoes-copy reveal">
             <h2 class="serif">Deslocações</h2>
             <p>
-              Nesta zona não há Uber nem táxis disponíveis. Organizem o regresso com antecedência, para haver sempre alguém em condições de conduzir em segurança.
+              Para facilitar o regresso após a festa, teremos um serviço de táxis com dois veículos de 8 lugares, disponível entre as 00h00 e as 04h30. Após esse horário não haverá táxis no local.
+            </p>
+            <p>
+              Este serviço destina-se apenas aos convidados alojados em:
+            </p>
+            <ul style="margin:0 0 1.15em 1.2em; font-size:clamp(18px, 1.35vw, 22px); line-height:1.8;">
+              <li>Aldeia da Ponte</li>
+              <li>Aldeia do Bispo</li>
+              <li>Aldeia Velha</li>
+              <li>Alfaiates</li>
+              <li>Soito</li>
+            </ul>
+            <p>
+              A organização será feita por nós via WhatsApp e terá um custo associado, conforme o número de interessados. Caso pretendam utilizar este serviço pedimos que assinalem essa opção no formulário de confirmação.
+            </p>
+            <p>
+              <strong>Nota:</strong><br>
+              Para Sabugal, Hotel do Cró, Vale das Éguas e restantes aldeias, cada pessoa deverá reservar diretamente o seu táxi. Os noivos não se responsabilizam pelo transporte nestas zonas.
+            </p>
+            <p>
+              Contacto de um taxista da zona: <a href="tel:+351927191949">+351 927 191 949</a>
             </p>
           </div>
 
@@ -174,13 +193,19 @@
           <div class="story-content">
             <h2>A nossa história</h2>
             <p>
-              Conhecemo-nos na aldeia, nas festas de verão. Primeiro como bons amigos, depois reencontrámo-nos de uma forma diferente e especial.
+              Conhecemo-nos na aldeia, nas festas de verão. Houve logo uma troca de olhares, mas na altura seguimos apenas como bons amigos. Durante alguns anos cada um viveu a sua vida, até que, num dia inesperado, nos reencontrámos de forma diferente e especial. Foi nesse momento que decidimos dar uma oportunidade a um amor que estava guardado no coração há muitos anos.
             </p>
             <p>
-              Fomos criando memórias, apoiámo-nos nos bons e nos maus momentos e aprendemos a partilhar a vida lado a lado.
+              Aprendemos a partilhar, criámos momentos inesquecíveis, rimos até a barriga doer, desabafámos e apoiámo-nos todos os dias, sempre presentes nos bons e nos maus momentos. Partilhámos sonhos, pequenas alegrias e grandes emoções... e até vimos juntos o Sporting tornar-se bicampeão e a fazer a dobradinha.
             </p>
             <p>
-              No dia 28 de junho de 2025 surgiu o pedido de casamento, na Nossa Senhora dos Prazeres. Mais tarde descobrimos que a nossa bebé Vera também fará parte deste dia tão especial.
+              Passado um ano, entre mudanças e desafios enfrentados lado a lado, surgiu o pedido de casamento. O pedido mais especial de todos: no dia 28 de junho de 2025, em Nossa Senhora dos Prazeres. Foi assim que nos tornámos os Noivos de São Pedro.
+            </p>
+            <p>
+              E como a vida adora surpreender, em novembro de 2025 descobrimos que estávamos à espera da nossa bebé mais querida, a Vera, que estará presente neste dia tão especial para nós.
+            </p>
+            <p>
+              Às vezes a vida dá muitas voltas... e que bom que foram essas voltas que nos trouxeram até aqui.
             </p>
           </div>
 
@@ -269,6 +294,35 @@
                   <div id="criancas-container"></div>
                 </div>
               </div>
+
+              <div id="taxi-section" class="dynamic-section" style="display: none;">
+              <div class="dynamic-section-header">
+                 <h3>Serviço de táxi</h3>
+                 <p>
+                   O serviço de transporte destina-se apenas aos convidados alojados em Aldeia da Ponte, Aldeia do Bispo, Aldeia Velha, Alfaiates e Soito.
+                 </p>
+                 <p>
+                   Caso estejam alojados numa destas zonas e pretendam utilizar o serviço, pedimos que preencham o formulário. O transporte terá um custo simbólico, ajustado ao número de pessoas interessadas.
+                  </p>
+              </div>
+
+  <div class="form-field">
+    <label for="taxi-interesse">
+      <input
+        id="taxi-interesse"
+        name="taxi_interesse"
+        type="checkbox"
+        value="Sim"
+      >
+      Estou interessado no serviço de táxi no final da noite
+    </label>
+  </div>
+
+  <div class="form-field" id="taxi-pessoas-section" style="display: none;">
+    <label for="taxi-pessoas">Para quantas pessoas?</label>
+    <input class="input" id="taxi-pessoas" name="taxi_pessoas" type="number" min="1" value="1">
+  </div>
+</div>
 
               <div class="form-actions">
                 <button class="btn small" type="submit">Enviar</button>

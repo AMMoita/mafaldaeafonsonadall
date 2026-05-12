@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const adultosInput = document.getElementById("adultos");
   const criancasInput = document.getElementById("criancas");
 
+  const taxiSection = document.getElementById("taxi-section");
+  const taxiInteresseInput = document.getElementById("taxi-interesse");
+  const taxiPessoasSection = document.getElementById("taxi-pessoas-section");
+  const taxiPessoasInput = document.getElementById("taxi-pessoas");
+
   const nomeInput = document.getElementById("nome");
   const sobrenomeInput = document.getElementById("sobrenome");
 
@@ -110,6 +115,22 @@ document.addEventListener("DOMContentLoaded", function () {
     updateRequiredFieldsForGuests();
   }
 
+  function refreshTaxiFields() {
+    if (!taxiSection || !taxiInteresseInput || !taxiPessoasSection || !taxiPessoasInput) return;
+
+    const confirmacao = presenca.value;
+    const interessado = taxiInteresseInput.checked;
+
+    taxiSection.style.display = confirmacao === "Sim" ? "block" : "none";
+    taxiPessoasSection.style.display = confirmacao === "Sim" && interessado ? "block" : "none";
+    taxiPessoasInput.required = confirmacao === "Sim" && interessado;
+
+    if (confirmacao !== "Sim") {
+      taxiInteresseInput.checked = false;
+      taxiPessoasInput.value = 1;
+    }
+  }
+
   function refreshGuestFields() {
     const confirmacao = presenca.value;
 
@@ -126,12 +147,14 @@ document.addEventListener("DOMContentLoaded", function () {
       criancasSection.style.display = criancas > 0 ? "block" : "none";
 
       preencherPrimeiroAdultoAutomaticamente();
+      refreshTaxiFields();
     } else {
       guestCountSection.style.display = confirmacao === "Não" ? "none" : "block";
       adultosSection.style.display = "none";
       criancasSection.style.display = "none";
       adultosContainer.innerHTML = "";
       criancasContainer.innerHTML = "";
+      refreshTaxiFields();
     }
   }
 
@@ -172,6 +195,10 @@ document.addEventListener("DOMContentLoaded", function () {
     refreshGuestFields();
   });
 
+  if (taxiInteresseInput) {
+    taxiInteresseInput.addEventListener("change", refreshTaxiFields);
+  }
+
   nomeInput.addEventListener("input", preencherPrimeiroAdultoAutomaticamente);
   sobrenomeInput.addEventListener("input", preencherPrimeiroAdultoAutomaticamente);
 
@@ -192,6 +219,8 @@ document.addEventListener("DOMContentLoaded", function () {
       presenca: confirmacao,
       adultos: adultos,
       criancas: criancas,
+      taxiInteresse: confirmacao === "Sim" && taxiInteresseInput?.checked ? "Sim" : "Não",
+      taxiPessoas: confirmacao === "Sim" && taxiInteresseInput?.checked ? Math.max(1, parseInt(taxiPessoasInput?.value, 10) || 1) : 0,
       adultosDetalhes: confirmacao === "Sim" ? collectGuestData("adulto", adultos) : [],
       criancasDetalhes: confirmacao === "Sim" ? collectGuestData("crianca", criancas) : [],
       comentarios: ""
@@ -210,6 +239,8 @@ document.addEventListener("DOMContentLoaded", function () {
         form.reset();
         adultosInput.value = 1;
         criancasInput.value = 0;
+        if (taxiInteresseInput) taxiInteresseInput.checked = false;
+        if (taxiPessoasInput) taxiPessoasInput.value = 1;
         refreshGuestFields();
       })
       .catch(() => {
